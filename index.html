@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCM Alerts</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: {
+                DEFAULT: 'hsl(var(--primary))',
+                foreground: 'hsl(var(--primary-foreground))',
+              },
+              secondary: {
+                DEFAULT: 'hsl(var(--secondary))',
+                foreground: 'hsl(var(--secondary-foreground))',
+              },
+              destructive: {
+                DEFAULT: 'hsl(var(--destructive))',
+                foreground: 'hsl(var(--destructive-foreground))',
+              },
+              success: {
+                DEFAULT: 'hsl(var(--success))',
+                foreground: 'hsl(var(--success-foreground))',
+              },
+              muted: {
+                DEFAULT: 'hsl(var(--muted))',
+                foreground: 'hsl(var(--muted-foreground))',
+              },
+              accent: {
+                DEFAULT: 'hsl(var(--accent))',
+                foreground: 'hsl(var(--accent-foreground))',
+              },
+              popover: {
+                DEFAULT: 'hsl(var(--popover))',
+                foreground: 'hsl(var(--popover-foreground))',
+              },
+              card: {
+                DEFAULT: 'hsl(var(--card))',
+                foreground: 'hsl(var(--card-foreground))',
+              },
+            },
+            borderRadius: {
+                lg: `var(--radius)`,
+                md: `calc(var(--radius) - 2px)`,
+                sm: `calc(var(--radius) - 4px)`,
+            },
+            keyframes: {
+              blink: {
+                '50%': { opacity: 0.2 },
+              },
+            },
+            animation: {
+              blink: 'blink 1.5s infinite ease-in-out',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --background: 220 20% 97%; /* #F7F9FC */
+        --foreground: 224 10% 21%;
+        --card: 0 0% 100%;
+        --card-foreground: 224 10% 21%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
+        --primary: 243 100% 70%; /* #6C63FF - Indigo */
+        --primary-foreground: 0 0% 100%;
+        --secondary: 220 14.3% 95.9%;
+        --secondary-foreground: 220 8.9% 46.1%;
+        --muted: 220 14.3% 95.9%;
+        --muted-foreground: 220 8.9% 46.1%;
+        --accent: 220 14.3% 95.9%;
+        --accent-foreground: 224 10% 21%;
+        --destructive: 0 100% 71%; /* #FF6B6B - Coral Red */
+        --destructive-foreground: 0 0% 100%;
+        --success: 160 50% 51%; /* #3AB795 - Teal Green */
+        --success-foreground: 0 0% 100%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 243 100% 70%;
+        --radius: 0.75rem;
+      }
+      .dark {
+        --background: 222 47% 11.2%;
+        --foreground: 210 40% 98%;
+        --card: 222 47% 11.2%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222 47% 11.2%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 243 90% 75%;
+        --primary-foreground: 222 47% 11.2%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 80% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --success: 160 50% 60%;
+        --success-foreground: 0 0% 0%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 243 90% 75%;
+      }
+      body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^18.3.1/",
+    "react": "https://esm.sh/react@^18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@^18.3.1/",
+    "recharts": "https://esm.sh/recharts@^3.1.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2",
+    "@supabase/auth-ui-react": "https://esm.sh/@supabase/auth-ui-react@^0.4.7",
+    "@supabase/auth-ui-shared": "https://esm.sh/@supabase/auth-ui-shared@^0.1.8"
+}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="https://esm.sh/@supabase/auth-ui-react/dist/styles.css">
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
